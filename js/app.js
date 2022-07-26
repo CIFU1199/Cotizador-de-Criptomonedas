@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 function consultarCripto() {
     const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
-    mostrarSpinner();
+    
 
     fetch(url)
         .then( respuesta => respuesta.json())
@@ -78,7 +78,7 @@ function mostrarAlerta(msg) {
 function consultarAPI(){
     const {moneda, criptomoneda} = objBusqueda;
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
-        
+    mostrarSpinner();
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(cotizacion  =>{
